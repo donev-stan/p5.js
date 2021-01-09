@@ -21,5 +21,4 @@ function mousePressed() {
   red = random(255);
   green = random(255);
   blue = random(255);
-  
 }
