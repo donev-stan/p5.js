@@ -4,8 +4,7 @@ var green = 250;
 var blue = 250;
 
 function setup() {
-  createCanvas(950, 950);
-  background(230, 50, 120);  
+  createCanvas(950, 955);
   frameRate(2400);
 }
 
@@ -29,7 +28,6 @@ function draw() {
   move();
   bounce();
   display();
- 
 }
 
 function move() {
@@ -38,8 +36,8 @@ function move() {
   dotOne.y += dotOne.speedY;
 
   // second ball
-  dotTwo.y += dotTwo.speedY;
-  dotTwo.x += dotTwo.speedX;
+  dotTwo.y = mouseY;
+  dotTwo.x = mouseX;
 }
 
 function bounce() {
@@ -63,7 +61,7 @@ function bounce() {
 function display() {
   ellipseMode(CENTER);
   background(red, green, blue);
-  red = map(dotOne.x, 0, this.width, 0, 255);
+  red = map(dotOne.x, 0, this.width, 0, 255); // [0-255] --- [0-950]
   green = map(dotTwo.x, 0, this.width, 0, 255);
   blue = map(dotOne.y, 0, this.width, 0, 255);
 
@@ -75,8 +73,9 @@ function display() {
 }
 
 function mouseClicked() {
- dotOne.speedX *= -1;
- dotOne.speedY *= -1;
+
+    dotOne.speedX *= -1;
+    dotOne.speedY *= -1;
  
- dotTwo.speedY *= -1;
+ 
 }
