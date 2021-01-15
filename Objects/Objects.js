@@ -33,7 +33,7 @@ function draw() {
 function move() {
   // first ball
   dotOne.x += dotOne.speedX;
-  dotOne.y += dotOne.speedY;
+  //dotOne.y += dotOne.speedY;
 
   // second ball
   dotTwo.y = mouseY;
@@ -46,7 +46,8 @@ function bounce() {
     dotOne.speedX *= -1;
   }
   if (dotOne.y + dotOne.diameter >= this.height + 15 || dotOne.y <= 30) {
-    dotOne.speedY *= -1;
+    dotOne.y = 100;
+    //dotOne.speedY *= -1;
   }
 
   // second ball
@@ -74,8 +75,8 @@ function display() {
 
 function mouseClicked() {
 
-    dotOne.speedX *= -1;
-    dotOne.speedY *= -1;
+    //dotOne.speedX *= -1;
+    dotOne.y += 400;
  
  
 }

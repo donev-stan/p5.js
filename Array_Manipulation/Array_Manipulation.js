@@ -6,6 +6,7 @@ function setup() {
 
 function draw() {
   background(0);
+  
   for(var i = 0; i < bubbles.length; i++){
      bubbles[i].move();
      bubbles[i].display(); 
@@ -33,8 +34,8 @@ function Bubble(x, y){
   };
 
   this.move = function(){
-    this.x += random(-1, 1);
-    this.y += random(-1, 1);
+    this.x += random(-2, 2);
+    this.y += random(-2, 2);
   };
 }
 
